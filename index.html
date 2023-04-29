@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>programa</title>
+</head>
+<body>
+    <div>hola</div>
+    <canvas width="720" height="900">
+
+    </canvas>
+
+    <script>
+    function generarNuevoColor(){
+	var simbolos, color;
+	simbolos = "0123456789ABCDEF";
+	color = "#";
+
+	for(var i = 0; i < 6; i++){
+		color = color + simbolos[parseInt(Math.random() * 16)];
+	}
+return color;
+
+}
+
+
+function cuadradoVerde(){
+ var pantalla = document.querySelector("canvas");
+       var pincel   = pantalla.getContext("2d");
+        var ubicacionX=parseInt( Math.random()*300);
+        var ubicacionY=parseInt( Math.random()*300);
+        pincel.fillStyle=generarNuevoColor();
+       pincel.fillRect(ubicacionX,ubicacionY,50,50);
+       
+       pincel.strokeStyle="black";
+       pincel.strokeRect(ubicacionX,ubicacionY,50,50);
+       
+
+
+
+}
+
+
+ 
+ setInterval(cuadradoVerde,1000) 
+
+    </script>
+</body>
+</html>
